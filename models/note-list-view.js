@@ -10,7 +10,8 @@
       return null;
     } else{
       var mappedList = notes_array.map(function(note) {
-        return '<li><div>' + note.getText() + '</div></li>'
+        var shorterString = note.getText().substring(0,20)
+        return '<li><div>' + shorterString + '</div></li>'
       });
       return '<ul>' + mappedList.join('') + '</ul>'
     }
