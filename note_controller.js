@@ -1,12 +1,17 @@
 (function(exports) {
 
-  function changeText() {
-    window.onload = function() {
-    var appDiv = document.getElementById("app");
-    appDiv.innerHTML = "Howdy!";
-  };
-}
-  exports.changeText = changeText;
-})(this);
+  function NoteController(list) {
+    this._list = list;
+  }
 
-changeText();
+  NoteController.prototype.insertList = function () {
+    window.onload = function() {
+      var noteListView = new NoteListView(this._list);
+      var appDiv = document.getElementById("app");
+      appDiv.innerHTML = noteListView.getHTML();
+    };
+  };
+
+  exports.NoteController = NoteController;
+
+})(this);
