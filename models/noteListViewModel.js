@@ -10,6 +10,7 @@
   NoteListView.prototype.getHTML = function () {
     var markup = "<ul><li><div>";
     var notes_array = this._noteList.getNotes();
+    console.log("marker:", this._noteList);
     if (notes_array.length === 0) {
       return null;
     } else {

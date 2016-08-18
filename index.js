@@ -1,4 +1,2 @@
-var list = new NoteList()
-list.addNote("Favourite drink: seltzer")
-var controller = new NoteController(list);
+var controller = new NoteController();
 controller.insertList();
